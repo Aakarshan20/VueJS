@@ -10,6 +10,7 @@
 <body>
 	<div id = "myApp">
 		<h3>遊戲列表</h3>
+		<!-- Virtual DOM 相當於server端渲染-->
 		<div v-if='seen'>2017最新發表</div>
 		<ol>
 			<li v-for='game in games'>
@@ -29,7 +30,7 @@
 					{title:'勇者鬥惡龍', price: 400},
 					{title:'超級瑪莉歐', price: 300},
 					{title:'惡靈古堡', price: 99},
-				]
+				]//此為中括號 為list
 			}
 		});
 	</script>
