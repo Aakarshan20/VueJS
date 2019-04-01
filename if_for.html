@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id = "myApp">
+		<h3>遊戲列表</h3>
+		<div v-if='seen'>2017最新發表</div>
+		<ol>
+			<li v-for='game in games'>
+				{{ game.title }} / {{game.price}} 元
+			</li>
+		</ol>
+
+	</div>
+	<p v-if='seen'>快看我!</p><!--seen是true就顯示 反之-->
+	
+	<script>
+		var myApp = new Vue({
+			el: '#myApp',
+			data:{
+				seen: true,
+				games: [
+					{title:'勇者鬥惡龍', price: 400},
+					{title:'超級瑪莉歐', price: 300},
+					{title:'惡靈古堡', price: 99},
+				]
+			}
+		});
+	</script>
+</body>
+</html>
