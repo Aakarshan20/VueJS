@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- v-model : 為頁面輸入框進行數據綁定 -->
+	<!-- 當下方的v-model變化時 (也就是修改input的內容時)-->
+	<!-- 上方的mygame也會即時變化 -->
+	<div id = "myApp">
+		<p>你最喜歡的遊戲是: {{mygame}}</p>
+		<input v-model='mygame'>
+	</div>
+	
+	<script>
+		var myApp = new Vue({
+			el: '#myApp',
+			data:{
+				mygame: '超級瑪莉歐'
+			}
+		});
+	</script>
+</body>
+</html>
