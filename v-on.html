@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+
+</head>
+<body>
+	<div id="myApp">
+		<p>您最喜歡的遊戲是: {{mygame}} </p>
+		<button v-on:click="btnClick2('當個創世神')">當個創世神</button>
+		<button v-on:click="btnClick2('明星三缺一')">當個創世神</button>
+		<button v-on:click="btnClick('SEGA RALLY')">當個創世神</button>
+		<button @click="btnClick2('惡靈古堡')">當個創世神</button>
+	</div>
+	<script>
+		var myApp = new Vue({
+			el: '#myApp',
+			data: {
+				mygame: 'Candy Crush'	
+			},
+			methods:{
+				btnClick: function(pgame){
+					this.mygame = pgame;
+				},
+				btnClick2: function(pgame){
+					this.mygame = pgame + '...';
+				},
+			}
+		});
+	</script>
+</body>
+</html>
