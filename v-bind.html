@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="myApp">
+		<ol>
+			<game-item v-for='item in games' v-bind:game='item'></game-item>
+		</ol>	
+	</div>
+
+	<script>
+		Vue.component('game-item',{
+			props:['game'],
+			template: '<li>{{game.title}}</li>'
+		});
+
+		var myApp = new Vue({
+			el: '#myApp',
+			data: {
+				games: [
+					{title: '排七'},
+					{title: '抽鬼牌'},
+					{title: '德州撲克'}
+				],
+				test: 'ohohoh'
+			}
+
+		});
+	</script>
+</body>
+</html>
