@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div id="myApp">
-		今年3月3日發售的任天堂switch價格是: {{price}}日圓, 含稅價格是: {{priceInTax}}日圓, 折合台幣: {{priceNTD}}元
+		今年3月3日發售的任天堂switch價格是: {{price}}日圓, 含稅價格是: {{priceInTax}}日圓, 折合台幣: {{priceNTD}}元 
 	</div>
 
 	<script>
@@ -24,7 +24,7 @@
 					return Math.round(this.price*1.08);
 				},
 				priceNTD: function(){
-					return Math.round(this.price/5);
+					return Math.round(this.priceInTax/5);
 				}
 			},
 			
