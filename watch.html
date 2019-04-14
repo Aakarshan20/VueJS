@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="myApp">
+		<p>今年3月3日發售的任天堂switch價格是: {{price}}日圓, 含稅價格是: {{priceInTax}}日圓, 折合台幣: {{priceNTD}}元 
+		</p>
+
+		<button @click="btnClick(10000)">加價10000日圓</button>
+	</div>
+
+	<script>
+		var myApp = new Vue({
+			el: '#myApp',
+
+			data: {
+				price: 0,
+				priceInTax :0,
+				priceNTD: 0,
+			},
+
+			watch:{
+				price: function(newVal, oldVal){
+					console.log(newVal,oldVal);
+					this.priceInTax = Math.round(this.price*1.08);
+					this.priceNTD = Math.round(this.priceInTax / 3);
+				},
+			},
+			methods:{
+				btnClick: function(newPrice){
+					this.price += newPrice;
+				},
+			},
+			
+		});
+		myApp.price=29980
+
+	</script>
+</body>
+<!-- computed:{
+				priceInTax = function(){
+					return this.price*1.08;
+				},
+				priceNTD = function(){
+					return this.price/3;
+				},
+			}, -->
+
+</html>
