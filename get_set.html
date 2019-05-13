@@ -12,34 +12,35 @@
 		<p>今年3月3日發售的任天堂switch價格是: {{price}}日圓, 含稅價格是: {{priceInTax}}日圓, 折合台幣: {{priceNTD}}元 
 		</p>
 
-		<button @click="btnClick(10000)">加價10000日圓</button>
+		<button @click="btnClick(10800)">把含稅價改為10800日圓</button>
 	</div>
 
 	<script>
 		var myApp = new Vue({
 			el: '#myApp',
-
 			data: {
-				price: 0,
-				priceInTax :0,
-				priceNTD: 0,
+				price: 29980
 			},
-
-			watch:{
-				price: function(newVal, oldVal){
-					console.log(newVal,oldVal);
-					this.priceInTax = Math.round(this.price*1.08);
-					this.priceNTD = Math.round(this.priceInTax / 3);
+			computed:{
+				priceInTax:{
+					get:function(){
+						return this.price*1.08;
+					},
+					set:function(value){
+						this.price = value/1.08;
+					}
+				},
+				priceNTD:function(){
+					return Math.round(this.priceInTax/3);
 				},
 			},
 			methods:{
 				btnClick: function(newPrice){
-					this.price += newPrice;
+					this.priceInTax = newPrice;
 				},
 			},
 			
 		});
-		myApp.price=29980
 
 	</script>
 </body>
