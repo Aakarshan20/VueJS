@@ -10,24 +10,24 @@
 <body>
 	<div id = "myApp">
 		<h3>遊戲列表</h3>
-		<!-- Virtual DOM 相當於server端渲染-->
-		<div v-if='seen'>2017最新發表</div>
 		<ol>
-			<li v-for='game in games'>
-				{{ game.title }} / {{game.price}} 元
-			</li>
+			<game-item v-for="item in games" v-bind:game="item">
+			</game-item>
 		</ol>
-		<p v-if='seen'>快看我!</p><!--seen是true就顯示 反之-->
 	</div>
 	<script>
+		Vue.component('game-item', {
+			props:['game'],
+			template:'<li>{{ game.title }}</li>'
+		});
 		var myApp = new Vue({
 			el: '#myApp',
 			data:{
 				seen: true,
 				games: [
-					{title:'勇者鬥惡龍', price: 400},
-					{title:'超級瑪莉歐', price: 300},
-					{title:'惡靈古堡', price: 99},
+					{title:'勇者鬥惡龍'},
+					{title:'超級瑪莉歐'},
+					{title:'惡靈古堡'},
 				]//此為中括號 為list
 			}
 		});

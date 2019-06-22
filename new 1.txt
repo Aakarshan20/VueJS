@@ -1,0 +1,4 @@
+create table blog_cate(
+	cate_id int unsigned auto_increment primary key,
+	cate_name varchar(50) not null  default '' comment "分類名稱",
+)engine myisam charset
