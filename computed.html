@@ -17,15 +17,20 @@
 			el: '#myApp',
 
 			data: {
-				price: 29980
+				price: 29980,
+				rateTax: 1.08,
+				rateJPYToNTD: 0.2
 			},
 			computed: {
-				priceInTax: function(){
-					return Math.round(this.price*1.08);
-				},
+				/*priceInTax: function(){
+					return Math.round(this.price* this.rateTax);
+				},計算屬性 前後不影響*/
 				priceNTD: function(){
-					return Math.round(this.priceInTax/5);
-				}
+					return Math.round(this.priceInTax * this.rateJPYToNTD);
+				},
+				priceInTax: function(){
+					return Math.round(this.price* this.rateTax);
+				},
 			},
 			
 		});
