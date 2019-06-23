@@ -11,7 +11,7 @@
 	<div id = "myApp">
 		<h3>遊戲列表</h3>
 		<ol>
-			<game-item v-for="item in games" v-bind:game="item">
+			<game-item v-for="item in games" v-bind:game="item" >
 			</game-item>
 		</ol>
 	</div>
@@ -23,7 +23,7 @@
 		var myApp = new Vue({
 			el: '#myApp',
 			data:{
-				seen: true,
+				//seen: false,
 				games: [
 					{title:'勇者鬥惡龍'},
 					{title:'超級瑪莉歐'},
