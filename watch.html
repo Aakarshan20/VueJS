@@ -21,13 +21,16 @@
 
 			data: {
 				price: 0,
-				priceInTax :0,
-				priceNTD: 0,
+				priceInTax :0,//此處必須定義屬性(與 computed不同)
+				priceNTD: 0,//此處必須定義屬性(與 computed不同)
 			},
 
 			watch:{
+				//監控著price屬性
+				//newVal, oldVal為必填 且不能改名字
 				price: function(newVal, oldVal){
 					console.log(newVal,oldVal);
+					//賦值
 					this.priceInTax = Math.round(this.price*1.08);
 					this.priceNTD = Math.round(this.priceInTax / 3);
 				},
