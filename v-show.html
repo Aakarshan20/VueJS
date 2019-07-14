@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="myApp">
+	<h1 v-show="result">任天堂新一代主機Switch</h1>
+	<button @click="btnClick">考試成績</button>
+	
+</div>
+<script>
+	var myApp = new Vue({
+		el: '#myApp',
+		data: {
+			result: true
+		},
+		methods:{
+			btnClick: function(){
+				this.result = !this.result;
+			},
+		},
+	});
+</script>
+</body>
+</html>
