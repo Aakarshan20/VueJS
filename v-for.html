@@ -8,20 +8,19 @@
 </head>
 <body>
 <div id="myApp">
-	<h1 v-show="result">任天堂新一代主機Switch</h1>
-	<button @click="btnClick">顯示/隱藏</button>
-	
+	<ul>
+		<li v-for="(game, index) in games">({{index+1}}){{game.title}} / 售價: {{game.price}}元</li>	
+	</ul>
 </div>
 <script>
 	var myApp = new Vue({
 		el: '#myApp',
 		data: {
-			result: true
-		},
-		methods:{
-			btnClick: function(){
-				this.result = !this.result;
-			},
+			games:[
+				{title: "勇者鬥惡龍", price: 500},
+				{title: "奔跑卡丁車", price: 400},
+				{title: "馬力歐世界", price: 550},
+			]
 		},
 	});
 </script>
