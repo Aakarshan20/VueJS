@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<div id="myApp">
+	<div :class="myClass">紅色文本2</div>
+	<button @click="btnClick">改變class吧</button>
+</div>
+<script>
+	var myApp = new Vue({
+		el: '#myApp',
+		data: {
+			myClass:{
+				active: true,
+				big: true,	
+			}
+		},
+		methods:{
+			btnClick: function(){
+				this.myClass.big = !this.myClass.big;
+			},
+		},
+	});
+</script>
+</body>
+</html>
