@@ -8,22 +8,23 @@
 </head>
 <body>
 <div id="myApp">
-	<div :class="myClass">紅色文本2</div>
-	<button @click="btnClick">改變class吧</button>
+	<h1 v-if="result == 0 ">成績未公布</h1>
+	<h1 v-else-if="result < 60 ">{{result}}分 - 考試不及格</h1>
+	<h1 v-else-if="result < 80 ">{{result}}分 - 還須努力</h1>
+	<h1 v-else=>{{result}}分 - 考得不錯 玩遊戲吧!</h1>
+	<button @click="btnClick">考試成績</button>
+	
 </div>
 <script>
 	var myApp = new Vue({
 		el: '#myApp',
 		data: {
-			myClass:{
-				active: true,
-				big: true,	
-			}
+			result: 0
 		},
 		methods:{
 			btnClick: function(){
-				this.myClass.big = !this.myClass.big;
-				this.myClass.active = !this.myClass.active;
+				this.result = Math.round(Math.random() * 100);
+				
 			},
 		},
 	});
