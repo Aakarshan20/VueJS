@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<!-- 循環JS對象 把對象內容循環顯示到頁面上 -->
+<body>
+<div id="myApp">
+	<ul>
+		<li v-for="(value, key) in mygame">
+			{{key}} :{{value}}
+		</li>	
+	</ul>
+</div>
+<script>
+	var myApp = new Vue({
+		el: '#myApp',
+		data: {
+			mygame:{
+				title: "馬力歐賽車",
+				price: 350,
+				pubdate: "2017年夏季",
+				category: "運動",
+				agerange: "全年齡",
+
+			}
+		},
+	});
+</script>
+</body>
+</html>
