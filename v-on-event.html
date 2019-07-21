@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<!-- 事件處裡器 -->
+<body>
+<div id="myApp">
+	<h1>事件處裡器</h1>
+	<input id="txtName" v-on:keyup="txtKeyup($event)">
+	<button id="btnOk" v-on:click="btnClick($event)">OK</button>
+</div>
+<script>
+	var myApp = new Vue({
+		el: '#myApp',
+		data: {},
+		methods:{
+			txtKeyup: function(event){
+				this.debugLog(event)
+			},
+			btnClick: function(event){
+				this.debugLog(event)
+			},
+			debugLog:function(event){
+				console.log(
+						event.srcElement.tagName,
+						event.srcElement.id,
+						event.srcElement.innerHTML,
+						event.key?event.key:""
+				);
+			},
+		},
+	});
+</script>
+</body>
+</html>
