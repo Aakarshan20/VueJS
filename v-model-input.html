@@ -6,23 +6,22 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 </head>
+<!-- 事件處裡器 -->
 <body>
 <div id="myApp">
-	<h1 v-show="result">任天堂新一代主機Switch</h1>
-	<button @click="btnClick">顯示/隱藏</button>
-	
+	<h1>表單控件綁定</h1>
+	<input type="text" v-model="message" placeholder="編輯我">
+	<p>Message is {{ message }}</p>
 </div>
 <script>
 	var myApp = new Vue({
 		el: '#myApp',
-		data: {
-			result: true
+		
+		data:{
+			message : '我愛黎明',
 		},
 		methods:{
-			btnClick: function(){
-				this.result = !this.result;
-				
-			},
+
 		},
 	});
 </script>
