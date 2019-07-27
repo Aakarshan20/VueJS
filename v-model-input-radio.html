@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<!-- 事件處裡器 -->
+<body>
+<div id="myApp">
+	<h1>表單單選框控件綁定</h1>
+	<h3>選擇性別</h3>
+	<input type="radio" id = "male" value="男" v-model="pickedSex">
+	<label for="male">男</label>
+	<br>
+	<input type="radio" id = "female" value="女" v-model="pickedSex">
+	<label for="female">女</label>
+
+	<h3>選擇興趣</h3>
+	<input type="radio" id = "game" value="玩遊戲" v-model="pickedHobby">
+	<label for="game">玩遊戲</label>
+	<br>
+	<input type="radio" id = "movie" value="看電影" v-model="pickedHobby">
+	<label for="movie">看電影</label>
+	
+	<br>
+	<h3>選擇結果</h3>
+	<p>性別: {{ pickedSex }}</p>
+	<p>興趣: {{ pickedHobby }}</p>
+</div>
+<script>
+	var myApp = new Vue({
+		el: '#myApp',
+		data:{
+			pickedHobby: "",
+			pickedSex: ""
+		},
+		methods:{
+
+		},
+	});
+</script>
+</body>
+</html>
