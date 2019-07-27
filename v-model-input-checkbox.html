@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<!-- 事件處裡器 -->
+<body>
+<div id="myApp">
+	<h1>表單複選框控件綁定</h1>
+	<input type="checkbox" id = "生化危機7" value="生化危機7" v-model="checkedGames">
+	<label for="生化危機7">生化危機7</label>
+	<input type="checkbox" id = "模擬飛行" value="模擬飛行" v-model="checkedGames">
+	<label for="模擬飛行">模擬飛行</label>
+	<input type="checkbox" id = "賽爾達傳說" value="賽爾達傳說" v-model="checkedGames">
+	<label for="賽爾達傳說">賽爾達傳說</label>
+	<br>
+	<p>選擇的遊戲是 {{ checkedGames }}</p>
+</div>
+<script>
+	var myApp = new Vue({
+		el: '#myApp',
+		data:{
+			checkedGames: []
+		},
+		methods:{
+
+		},
+	});
+</script>
+</body>
+</html>
