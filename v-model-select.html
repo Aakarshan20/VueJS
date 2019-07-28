@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<!-- 事件處裡器 -->
+<body>
+<div id="myApp">
+	<h1>表單下拉框控件綁定</h1>
+	<h3>你最喜歡的NBA球星是:</h3>
+	<select v-model="linkedNBAStar" style="width:210px">
+		<option>柯比</option>
+		<option>詹姆斯</option>
+		<option>哈登</option>
+		<option>庫理</option>
+		<option>杜蘭特</option>
+	</select>
+	
+
+	<h3>我的全明星:</h3>
+	<select v-model="linkedNBAStars" multiple style="width:210px;height:210px">
+		<option>阿德托</option>
+		<option>懷特賽德</option>
+		<option>阿爾德里奇</option>
+		<option>戴維斯</option>
+		<option>格里芬</option>
+		<option>德羅賽</option>
+		<option>歐文</option>
+		<option>柯比</option>
+		<option>詹姆斯</option>
+		<option>哈登</option>
+		<option>庫理</option>
+		<option>杜蘭特</option>
+	</select>
+
+	<h3>選擇結果</h3>
+	<p>我最喜歡: {{ linkedNBAStar }}</p>
+	<p>我的全明星: {{ linkedNBAStars }}</p>
+</div>
+<script>
+	var myApp = new Vue({
+		el: '#myApp',
+		data:{
+			linkedNBAStar: null,
+			linkedNBAStars: [],
+		},
+		methods:{
+
+		},
+	});
+</script>
+</body>
+</html>
