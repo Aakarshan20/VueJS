@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<!-- 事件處裡器 -->
+<body>
+<div id="myApp">
+	<my-weather></my-weather>	
+</div>
+	
+<script>
+	var WeatherComponent = {
+		template:'<div>今天下雨, 隨他去吧!</div>'
+	};
+	var myApp = new Vue({
+		el: '#myApp',
+		data:{
+		},
+		components:{
+			'my-weather':WeatherComponent
+		},
+	});
+</script>
+</body>
+</html>
