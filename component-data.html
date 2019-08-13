@@ -8,20 +8,21 @@
 </head>
 <body>
 <div id="myApp">
-	<my-weather></my-weather>	
+	<div>今天的天氣是<today-weather/></div>
 </div>
 	
 <script>
-	var WeatherComponent = {
-		template:'<div>今天下雨, 隨他去吧!</div>'
-	};
+	
+	Vue.component('today-weather', {
+		template: '<strong>{{todayWeather}}</strong>',
+		data: function(){
+			return {
+				todayWeather: '雨加雪'
+			};
+		}
+	});
 	var myApp = new Vue({
-		el: '#myApp',
-		data:{
-		},
-		components:{
-			'my-weather':WeatherComponent
-		},
+		el: '#myApp', 
 	});
 </script>
 </body>
