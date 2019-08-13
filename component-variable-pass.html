@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<div id="myApp">
+	<div>請輸入您的名字: <input v-model="myname"></div>
+	<hr/>
+	<say-hello :pname="myname">
+</div>
+	
+<script>
+	
+	Vue.component('say-hello', {
+		props:['pname'],
+		template: '<div>您好, <strong>{{pname}}</strong>!</div>',
+	});
+	var myApp = new Vue({
+		el: '#myApp', 
+		data:{
+			myname:"Koma"
+		}
+	});
+</script>
+</body>
+</html>
