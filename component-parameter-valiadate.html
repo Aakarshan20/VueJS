@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+<div id="myApp">
+	<h1>身世之謎</h1>
+	<show-member-info  :age="2510" ></show-member-info>
+</div>
+	
+<script>
+	
+	Vue.component('show-member-info', {
+		props:{
+			name:{
+				type: String,
+				required: true,
+			},
+			age:{
+				type: Number,
+				validator: function(value){
+					return value >=0 && value <=130;
+				}
+			},
+			detail:{
+				type: Object,
+				default: function(){
+					return {
+						address: 'US',
+						language: 'English',
+					};
+				}
+			},
+		},
+		template:'<div>姓名: {{this.name}}<br/>'
+			+'年齡: {{this.age}}歲<br/>'		
+			+'地址: {{this.detail.address}}<br/>'		
+			+'語言: {{this.detail.language}}</div>'		
+	});
+	var myApp = new Vue({
+		el: '#myApp', 
+	});
+</script>
+</body>
+</html>

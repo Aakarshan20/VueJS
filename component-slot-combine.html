@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<!-- v-on -->
+<!-- slot是父組件與子組件的通訊方式 可以將父組件的內容顯示在子組件中-->
+<body>
+<div id="myApp">
+	<nba-all-stars c="歐尼爾" pf="加內特">
+		<span slot="sf">皮爾斯</span>
+		<span slot="sg">雷阿倫</span>
+		<span slot="pg">隆多</span>
+	</nba-all-stars>
+</div>
+	
+<script>
+	Vue.component('nba-all-stars', {
+		props:['c','pf'],
+		template:'<div>'
+		+'<div>中鋒:{{c}}</div>'
+		+'<div>大前:{{pf}}</div>'
+		+'<div>小前:<slot name="sf"></slot></div>'
+		+'<div>分衛:<slot name="sg"></slot></div>'
+		+'<div>控衛:<slot name="pg"></slot></div>'
+		+'</div>',
+	});
+	var myApp = new Vue({
+		el: '#myApp', 
+	});
+</script>
+</body>
+</html>

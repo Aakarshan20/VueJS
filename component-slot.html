@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<!-- v-on -->
+<!-- slot是父組件與子組件的通訊方式 可以將父組件的內容顯示在子組件中-->
+<body>
+<div id="myApp">
+	<say-to pname="koma">
+		你的視頻做得太差了
+	</say-to>
+	<say-to pname="mike">
+		你千萬不要學KOMA
+	</say-to>
+	<say-to pname="john">
+		你教教他倆吧
+	</say-to>
+
+</div>
+	
+<script>
+	
+	Vue.component('say-to', {
+		props:['pname'],
+		template:'<div>你好<strong>{{pname}}</strong><slot></slot></div>',
+	});
+	var myApp = new Vue({
+		el: '#myApp', 
+	});
+</script>
+</body>
+</html>
